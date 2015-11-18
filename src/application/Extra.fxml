@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+	<children>
+		<MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="600.0">
+			<menus>
+				<Menu mnemonicParsing="false" text="File">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#Export" text="Export" />
+					</items>
+				</Menu>
+
+			</menus>
+		</MenuBar>
+		<TabPane layoutY="27.0" prefHeight="373.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+			<tabs>
+				<Tab text="Simple Calc">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+							<children>
+								<Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="53.0" layoutX="7.0" layoutY="6.0" stroke="BLACK" strokeType="INSIDE" width="585.0" />
+								<Label fx:id="num1" contentDisplay="CENTER" layoutX="14.0" layoutY="24.0" prefHeight="17.0" prefWidth="130.0" text="0" textOverrun="CENTER_ELLIPSIS" />
+								<Label fx:id="op" layoutX="220.0" layoutY="24.0" prefHeight="17.0" prefWidth="76.0" text="" />
+								<Label fx:id="num2" layoutX="427.0" layoutY="24.0" prefHeight="17.0" prefWidth="130.0" text="" />
+								<Button layoutX="119.0" layoutY="115.0" mnemonicParsing="false" onAction="#processNumpad" prefHeight="39.0" prefWidth="72.0" text="7" />
+								<Button layoutX="221.0" layoutY="115.0" mnemonicParsing="false" onAction="#processNumpad" prefHeight="39.0" prefWidth="72.0" text="8" />
+								<Button layoutX="327.0" layoutY="115.0" mnemonicParsing="false" onAction="#processNumpad" prefHeight="39.0" prefWidth="72.0" text="9" />
+								<Button layoutX="428.0" layoutY="115.0" mnemonicParsing="false" onAction="#processOperator" prefHeight="39.0" prefWidth="72.0" text="/" />
+								<Button layoutX="119.0" layoutY="176.0" mnemonicParsing="false" onAction="#processNumpad" prefHeight="39.0" prefWidth="72.0" text="4" />
+								<Button layoutX="221.0" layoutY="176.0" mnemonicParsing="false" onAction="#processNumpad" prefHeight="39.0" prefWidth="72.0" text="5" />
+								<Button layoutX="327.0" layoutY="176.0" mnemonicParsing="false" onAction="#processNumpad" prefHeight="39.0" prefWidth="72.0" text="6" />
+								<Button layoutX="428.0" layoutY="176.0" mnemonicParsing="false" onAction="#processOperator" prefHeight="39.0" prefWidth="72.0" text="*" />
+								<Button layoutX="119.0" layoutY="237.0" mnemonicParsing="false" onAction="#processNumpad" prefHeight="39.0" prefWidth="72.0" text="1" />
+								<Button layoutX="221.0" layoutY="237.0" mnemonicParsing="false" onAction="#processNumpad" prefHeight="39.0" prefWidth="72.0" text="2" />
+								<Button layoutX="327.0" layoutY="237.0" mnemonicParsing="false" onAction="#processNumpad" prefHeight="39.0" prefWidth="72.0" text="3" />
+								<Button layoutX="428.0" layoutY="237.0" mnemonicParsing="false" onAction="#processOperator" prefHeight="39.0" prefWidth="72.0" text="+" />
+								<Button layoutX="119.0" layoutY="298.0" mnemonicParsing="false" onAction="#processNumpad" prefHeight="39.0" prefWidth="72.0" text="." />
+								<Button layoutX="222.0" layoutY="298.0" mnemonicParsing="false" onAction="#processNumpad" prefHeight="39.0" prefWidth="72.0" text="0" />
+								<Button layoutX="327.0" layoutY="298.0" mnemonicParsing="false" onAction="#processOperator" prefHeight="39.0" prefWidth="175.0" text="=" />
+								<Button layoutX="119.0" layoutY="63.0" mnemonicParsing="false" onAction="#clearLast" prefHeight="39.0" prefWidth="72.0" text="CE" />
+								<Button layoutX="222.0" layoutY="63.0" mnemonicParsing="false" onAction="#clearAll" prefHeight="39.0" prefWidth="72.0" text="C" />
+								<Button layoutX="327.0" layoutY="63.0" mnemonicParsing="false" onAction="#deleteLastInput" prefHeight="39.0" prefWidth="72.0" text="Backspace" />
+								<Button layoutX="428.0" layoutY="63.0" mnemonicParsing="false" onAction="#processOperator" prefHeight="39.0" prefWidth="72.0" text="-" />
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+				<Tab text="Scientific Calc">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+							<children>
+								<Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="53.0" stroke="BLACK" strokeType="INSIDE" width="585.0" />
+								<Label fx:id="num1S" layoutX="14.0" layoutY="18.0" prefHeight="17.0" prefWidth="130.0" text="" />
+								<Label fx:id="num2S" layoutX="427.0" layoutY="18.0" prefHeight="17.0" prefWidth="130.0" text="" />
+								<Label fx:id="opS" layoutX="220.0" layoutY="18.0" prefHeight="17.0" prefWidth="76.0" text="" />
+								<Button layoutX="323.0" layoutY="62.0" mnemonicParsing="false" onAction="#processOperatorS" prefHeight="39.0" prefWidth="72.0" text="-" />
+								<Button layoutX="222.0" layoutY="62.0" mnemonicParsing="false" onAction="#deleteLastInputS" prefHeight="39.0" prefWidth="72.0" text="Backspace" />
+								<Button layoutX="117.0" layoutY="62.0" mnemonicParsing="false" onAction="#clearAllS" prefHeight="39.0" prefWidth="72.0" text="C" />
+								<Button layoutX="14.0" layoutY="62.0" mnemonicParsing="false" onAction="#clearLastS" prefHeight="39.0" prefWidth="72.0" text="CE" />
+								<Button layoutX="222.0" layoutY="297.0" mnemonicParsing="false" onAction="#processOperatorS" prefHeight="39.0" prefWidth="175.0" text="=" />
+								<Button layoutX="117.0" layoutY="297.0" mnemonicParsing="false" onAction="#processNumpadS" prefHeight="39.0" prefWidth="72.0" text="0" />
+								<Button layoutX="14.0" layoutY="297.0" mnemonicParsing="false" onAction="#processNumpadS" prefHeight="39.0" prefWidth="72.0" text="." />
+								<Button layoutX="323.0" layoutY="236.0" mnemonicParsing="false" onAction="#processOperatorS" prefHeight="39.0" prefWidth="72.0" text="+" />
+								<Button layoutX="222.0" layoutY="236.0" mnemonicParsing="false" onAction="#processNumpadS" prefHeight="39.0" prefWidth="72.0" text="3" />
+								<Button layoutX="116.0" layoutY="236.0" mnemonicParsing="false" onAction="#processNumpadS" prefHeight="39.0" prefWidth="72.0" text="2" />
+								<Button layoutX="14.0" layoutY="236.0" mnemonicParsing="false" onAction="#processNumpadS" prefHeight="39.0" prefWidth="72.0" text="1" />
+								<Button layoutX="323.0" layoutY="175.0" mnemonicParsing="false" onAction="#processOperatorS" prefHeight="39.0" prefWidth="72.0" text="*" />
+								<Button layoutX="222.0" layoutY="175.0" mnemonicParsing="false" onAction="#processNumpadS" prefHeight="39.0" prefWidth="72.0" text="6" />
+								<Button layoutX="116.0" layoutY="175.0" mnemonicParsing="false" onAction="#processNumpadS" prefHeight="39.0" prefWidth="72.0" text="5" />
+								<Button layoutX="14.0" layoutY="175.0" mnemonicParsing="false" onAction="#processNumpadS" prefHeight="39.0" prefWidth="72.0" text="4" />
+								<Button layoutX="323.0" layoutY="114.0" mnemonicParsing="false" onAction="#processOperatorS" prefHeight="39.0" prefWidth="72.0" text="/" />
+								<Button layoutX="222.0" layoutY="114.0" mnemonicParsing="false" onAction="#processNumpadS" prefHeight="39.0" prefWidth="72.0" text="9" />
+								<Button layoutX="116.0" layoutY="114.0" mnemonicParsing="false" onAction="#processNumpadS" prefHeight="39.0" prefWidth="72.0" text="8" />
+								<Button layoutX="14.0" layoutY="114.0" mnemonicParsing="false" onAction="#processNumpadS" prefHeight="39.0" prefWidth="72.0" text="7" />
+								<Button layoutX="416.0" layoutY="62.0" mnemonicParsing="false" onAction="#scientific" prefHeight="39.0" prefWidth="72.0" text="Sin" />
+								<Button layoutX="416.0" layoutY="114.0" mnemonicParsing="false" onAction="#scientific" prefHeight="39.0" prefWidth="72.0" text="Cos" />
+								<Button layoutX="416.0" layoutY="175.0" mnemonicParsing="false" onAction="#scientific" prefHeight="39.0" prefWidth="72.0" text="Log" />
+								<Button layoutX="416.0" layoutY="236.0" mnemonicParsing="false" onAction="#scientific" prefHeight="39.0" prefWidth="72.0" text="Square" />
+								<Button layoutX="416.0" layoutY="297.0" mnemonicParsing="false" onAction="#scientific" prefHeight="39.0" prefWidth="72.0" text="Sqr Root" />
+                        <Button layoutX="498.0" layoutY="62.0" mnemonicParsing="false" onAction="#Memory" prefHeight="39.0" prefWidth="72.0" text="MC" />
+                        <Button layoutX="498.0" layoutY="114.0" mnemonicParsing="false" onAction="#Memory" prefHeight="39.0" prefWidth="72.0" text="MR" />
+                        <Button layoutX="498.0" layoutY="175.0" mnemonicParsing="false" onAction="#Memory" prefHeight="39.0" prefWidth="72.0" text="M+" />
+                        <Button layoutX="498.0" layoutY="236.0" mnemonicParsing="false" onAction="#Binary" prefHeight="39.0" prefWidth="72.0" text="B To H" />
+                        <Button layoutX="498.0" layoutY="297.0" mnemonicParsing="false" onAction="#scientific" prefHeight="39.0" prefWidth="72.0" text="e^" />
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+				<Tab id="history" text="History">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+							<children>
+								<TextArea fx:id="history" editable="false" layoutX="-1.0" layoutY="-1.0" prefHeight="344.0" prefWidth="600.0" stylesheets="@application.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+									<effect>
+										<Lighting>
+											<bumpInput>
+												<Shadow />
+											</bumpInput>
+											<light>
+												<Light.Distant />
+											</light>
+										</Lighting>
+									</effect>
+								</TextArea>
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+			</tabs>
+		</TabPane>
+	</children>
+</AnchorPane>
